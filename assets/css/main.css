@@ -1,0 +1,277 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+}
+
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-violet: hsl(270, 3%, 87%);
+  --clr-dark-violet: hsl(279, 6%, 55%);
+  --clr-very-dark-violet: hsl(278, 68%, 11%);
+  --clr-error:hsl(0, 100%, 66%);
+
+  --ff-main: "Space Grotesk";
+  --max-desktop: 1440px;
+  --max-mobile: 375px;
+}
+
+/* General styles */
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  /* background-color: red; */
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  width: var(--max-desktop);
+  height: 100%;
+}
+
+.cards-container {
+  width: 480px;
+  height: auto;
+  position: relative;
+  background-image: url("../img/design-images/bg-main-desktop.png");
+  background-size: cover;
+}
+
+.card-front-site,
+.card-back-site {
+  width: 445px;
+  height: 245px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.card-front-site {
+  top: 186px;
+  left: 163px;
+  background-image: url("../img/design-images/bg-card-front.png");
+  color: var(--clr-white);
+  position: relative;
+  z-index: 2;
+}
+
+.circle-1 {
+  width: 47px;
+  height: 49px;
+  display: inline-block;
+  background-color: var(--clr-white);
+  margin: 27px 0 0 32px;
+  border-radius: 100rem;
+}
+
+.circle-2 {
+  width: 22px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 100rem;
+  margin: 0 0 13px 16px;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.card-front-site p:nth-of-type(1) {
+  position: absolute;
+  bottom: 73px;
+  left: 31px;
+  font-size: 34px;
+
+  letter-spacing: 2px;
+}
+
+.card-front-site p:nth-of-type(2) {
+  position: absolute;
+  left: 31px;
+  bottom: 20px;
+  text-transform: uppercase;
+}
+
+.card-front-site p:nth-of-type(3) {
+  position: absolute;
+  right: 31px;
+
+  bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.card-back-site {
+  top: 469px;
+  left: 256px;
+  background-image: url("../img/design-images/bg-card-back.png");
+  z-index: 2;
+}
+
+.card-back-site>div {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+.card-back-site p {
+  position: absolute;
+  top: 112px;
+  right: 58px;
+  color: var(--clr-white);
+  letter-spacing: 2px;
+}
+
+.form-container {
+  min-width: 960px;
+  /* flex: 1; */
+  background-color: var(--clr-white);
+  position: relative;
+}
+
+form {
+  width: 380px;
+  height: 350px;
+  /* background-color: aqua; */
+  margin: 273px 0 0 348px;
+  font-family: var(--ff-main);
+}
+
+form label {
+  display: block;
+}
+
+ input {
+  width: 100%;
+  height: 44px;
+  border-radius: 10px;
+  padding-left: 15px;
+  border:1px solid rgba(0, 0, 0, 0.1);
+}
+
+input:active{
+  border:1px solid hsl(278, 94%, 30%);
+}
+
+label {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  line-height:10px;
+}
+
+.input-name {
+  /* margin-bottom: 25px; */
+}
+
+small{
+  
+  font-size:12px;
+  color:var(--clr-error);
+ 
+  display: block;
+}
+
+
+/* add class active to errors with the styles need , so the form with stretch */
+.name-error{
+ 
+  height: 26px;
+  /* margin: 14px 0; */
+}
+
+
+.number-error{
+  height: 28px;
+}
+
+.month-error{
+  height: 38px;
+  flex:1;
+
+}
+.year-error{
+  height: 38px;
+  flex:1;
+}
+
+.number-error-active{
+  margin-bottom: 25px;
+}
+
+.month-error-active,.year-error-active{
+  margin-bottom: 25px;
+}
+
+.dates-container{
+  display: flex;
+}
+
+
+.expiring-date-input-container{
+  width: 180px;
+
+}
+
+.dates-container-error{
+  width: 180px;
+  display:flex;
+}
+
+.input-month ,.input-year{
+  width: 79px;
+  height: 45px;
+}
+
+.cvc-container{
+  width: 190px;
+  margin-left: auto;
+}
+
+
+.btn-cta{
+ 
+  width: 100%;
+  height: 53px;
+  border-radius:10px;
+  background-color:var( --clr-very-dark-violet);
+  color:#fff;
+  border:none;
+  font-size:15px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  
+}
+
+.text-count{
+  /* height: 53px; */
+  /* background-color:red; */
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
