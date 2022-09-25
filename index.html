@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/design-images/favicon-32x32.png" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script defer src="./assets/js/app.js"></script>
@@ -14,13 +14,11 @@
   </head>
 
   <body>
-    
     <section class="main-container">
       <div class="content-container">
         <div class="cards-container">
           <div class="card-front-site">
-            <span class="circle-1"></span>
-            <span class="circle-2"></span>
+            <div class="circle-1"></div>
             <p>0000 0000 0000 0000</p>
             <p>Jane Appleseed</p>
             <p>00/00</p>
@@ -49,34 +47,36 @@
                   <label for="Exp Date">Exp. Date (MM/YY)</label>
                   <input type="text" class="input-month" placeholder="MM" />
                   <input type="text" class="input-year" placeholder="YY" />
+                  <small class="month-error"></small>
+                  <small class="year-error"></small>
                 </div>
-               
+
                 <div class="cvc-container">
                   <label for="CVC">CVC</label>
                   <input type="text" class="input-cvc" placeholder="e.g. 123" />
+                  <small class="cvc-error"></small>
                 </div>
               </div>
-               <div class="dates-container-error">
-                <small class="month-error"></small>
-                <small class="year-error"></small>
-               </div>
-            
             </div>
-            <button class="btn-cta" type="submit" >Confirm</button>
+            <button class="btn-cta" type="submit">Confirm</button>
           </form>
-          <div class="text-count">x</div>
+          <div class="modal-success">
+                <div class="icon"></div>
+                <h2>Thank you!</h2>
+                <p>We've added your card details </p>
+                <button class="btn-success">Continue</button>
+          </div>
         </div>
       </div>
     </section>
   </body>
 </html>
 
-
 <!-- Completed state start
 
-Thank you!
-We've added your card details 
-Continue
+
+
+
 
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

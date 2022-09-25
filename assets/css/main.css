@@ -54,7 +54,7 @@ a {
 
 .cards-container {
   width: 480px;
-  height: auto;
+  height: 100%;
   position: relative;
   background-image: url("../img/design-images/bg-main-desktop.png");
   background-size: cover;
@@ -78,30 +78,23 @@ a {
 }
 
 .circle-1 {
-  width: 47px;
-  height: 49px;
-  display: inline-block;
-  background-color: var(--clr-white);
-  margin: 27px 0 0 32px;
-  border-radius: 100rem;
+
+  position: absolute;
+  top: 27px;
+  left: 32px;
+  width:86px;
+  height: 100%;
+  background-image: url("../img/design-images/card-logo.svg");
+  background-repeat: no-repeat;
 }
 
-.circle-2 {
-  width: 22px;
-  height: 24px;
-  display: inline-block;
-  border-radius: 100rem;
-  margin: 0 0 13px 16px;
-  border: 1px solid #fff;
-  background-color: transparent;
-}
+
 
 .card-front-site p:nth-of-type(1) {
   position: absolute;
   bottom: 73px;
   left: 31px;
   font-size: 34px;
-
   letter-spacing: 2px;
 }
 
@@ -149,12 +142,12 @@ a {
   position: relative;
 }
 
-form {
+.form {
   width: 380px;
   height: 350px;
-  /* background-color: aqua; */
   margin: 273px 0 0 348px;
   font-family: var(--ff-main);
+  /* display: none; */
 }
 
 form label {
@@ -188,7 +181,7 @@ small{
   
   font-size:12px;
   color:var(--clr-error);
- 
+  margin-top: 5px;
   display: block;
 }
 
@@ -196,30 +189,42 @@ small{
 /* add class active to errors with the styles need , so the form with stretch */
 .name-error{
  
-  height: 26px;
+  height: 21px;
   /* margin: 14px 0; */
 }
 
 
 .number-error{
-  height: 28px;
+  height: 21px;
 }
 
 .month-error{
-  height: 38px;
-  flex:1;
+  height: 33px;
+  display: inline-block;
+  width: 85px;
+ 
 
 }
 .year-error{
-  height: 38px;
-  flex:1;
+  height: 33px;
+  display: inline-block;
+  width: 85px;
+}
+
+
+.cvc-error{
+  
+ 
 }
 
 .number-error-active{
   margin-bottom: 25px;
 }
 
-.month-error-active,.year-error-active{
+.month-error-active{
+  margin-bottom: 25px;
+}
+.year-error-active{
   margin-bottom: 25px;
 }
 
@@ -233,8 +238,8 @@ small{
 
 }
 
+
 .dates-container-error{
-  width: 180px;
   display:flex;
 }
 
@@ -263,10 +268,54 @@ small{
   
 }
 
-.text-count{
-  /* height: 53px; */
-  /* background-color:red; */
+/*   modal success */
+
+.modal-success{
+  display: none;
+  width: 383px;
+  height: 293px;
+  text-align: center;
+  /* border: 1px solid red; */
+  margin:304px 0 0 350px;
+  font-family: var(--ff-main);
 }
+.icon{
+  background-image: url("../img/design-images/icon-complete.svg");
+    display: inline-block;
+    width: 80px;
+    height: 82px;
+   
+}
+
+
+.modal-success h2{
+  font-size:31px;
+
+
+  text-transform:uppercase;
+  letter-spacing:2px;
+  line-height: 25px;
+  margin: 37px 0 27px 0;
+}
+.modal-success p{
+  font-size:18px;
+  color:var( --clr-dark-violet);
+  margin-bottom: 50px;
+  line-height: 15px;
+ 
+}
+
+.btn-success{
+  width: 100%;
+  border-radius: 10px;
+  border:none;
+  cursor: pointer;
+  height: 54px;
+  background-color: var(--clr-very-dark-violet);
+  color:#fff;
+  font-size: 18px;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -274,4 +323,84 @@ small{
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+
+
+@media only screen and (max-width: 23.4375em) {
+  .content-container {
+    display: block;
+    /* flex-direction: column;
+    align-items: center; */
+    width: 100%;
+    height: 100%;
+  }
+
+  
+  .cards-container{
+    /* display: block; */
+    height: 240px;
+    position: relative;
+ 
+  }
+
+  .form{
+    margin:0;
+  }
+
+  .card-front-site{
+    width: 287px;
+    height: 160px;
+    z-index: 3;
+    left: 17px;
+    top: 120px;
+  
+  }
+
+  .card-back-site{
+    width: 287px;
+    height: 160px;
+    top: 30px;
+    left:72px;
+    background-size: cover;
+  }
+
+  .circle-1 {
+    top: 18px;
+    left: 19px;
+    width:100%;
+  }
+
+  .card-front-site p:nth-of-type(1) {
+    position: absolute;
+    bottom: 53px;
+    left: 19px;
+    font-size: 22px;
+    
+  }
+  .card-front-site p:nth-of-type(2) {
+   font-size:12px;
+   left: 19px;
+    bottom: 20px;
+
+  }
+
+  .card-front-site p:nth-of-type(3) {
+  
+    right: 20px;
+    font-size:12px;
+    bottom: 20px;
+    letter-spacing: 0;
+  }
+
+  .card-back-site p{
+    letter-spacing: 0;
+    font-size: 12px;
+    top: 70px;
+    right: 35px;
+  }
+
+  .btn-cta{
+  
+  }
 }

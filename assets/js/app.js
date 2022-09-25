@@ -36,7 +36,24 @@ const handlerClassChange = (targetElement,className,action) =>{
         
     }
 }
+const arePositiveNumbers = (input) => {
+    const numbers = /^[+]?[0-9]+$/;
+    if (input.match(numbers)) {
+        return true;
+    }else{
+        return false;
+    }
 
+};
+
+const areOnlyCharacter = (input)=>{
+        const characters =  /^[A-Za-z]*$/;
+        if (input.match(characters)) {
+            return true;
+        }else{
+            return false;
+        }
+}
 
 // const  areInputsEmpty = (inputs) =>{
 //     inputs.forEach(input => { 
@@ -59,41 +76,159 @@ const handleSubmit = (e) => {
  const expiryYearElem = document.querySelector(".input-year");
  const cvcInputElem = document.querySelector(".input-cvc");
 
-    const nameInputError = nameInputElem.value.trim().length  === 0 ?     addTextError(".name-error","Can't be blank","insert")  : null;
-if (nameInputError === null ) {
-    addTextError(".name-error","Can't be blank","remove") 
-}
+let nameInputError = null;
+let numberInputError = null;
+let expiryMonthError = null;
+let expiryYearError = null;
+let expiryCvcError = null;
+
+    if ( nameInputElem.value.trim().length  === 0 ) {
+        addTextError(".name-error","Can't be blank","insert");
+        nameInputError = true
+      
+    }else{
+        nameInputError = false;
+        addTextError(".name-error","Can't be blank","remove") 
+    }
+
+    if (nameInputError === false) {
+            if (!areOnlyCharacter(nameInputElem.value.trim())) {
+                addTextError(".name-error","Wrong format,only characters","insert");
+                nameInputError = true
+            }else{
+                nameInputError = false;
+                addTextError(".name-error","Can't be blank","remove") 
+            }
+    }
+
+
 
 if ( numberInputElem.value.trim().length  === 0 ) {
     addTextError(".number-error","Can't be blank" ,"insert") 
     handlerClassChange(".number-error","number-error-active","add");
+    numberInputError = true;
 }else{
+    numberInputError = false;
     handlerClassChange(".number-error","number-error-active","remove");
     addTextError(".number-error","Can't be blank" ,"remove") 
 }
+
+if (numberInputError === false) {
+   
+    if (!arePositiveNumbers(numberInputElem.value.trim())) {
+        addTextError(".number-error","Wrong format,numbers only" ,"insert") 
+        handlerClassChange(".number-error","number-error-active","add");
+        numberInputError = true;
+    }else{
+        numberInputError = false;
+        handlerClassChange(".number-error","number-error-active","remove");
+        addTextError(".number-error","Can't be blank" ,"remove") 
+
+    }
+}
+
+
+
+
+
+
 
 
 if( expiryMonthElem.value.trim().length  === 0 ){
     addTextError(".month-error","Can't be blank","insert")
     handlerClassChange(".month-error","month-error-active","add");
+    expiryMonthError = true;
 }else{
+    expiryMonthError = false;
     handlerClassChange(".month-error","month-error-active","remove");
     addTextError(".month-error","Can't be blank","remove")
+}
+
+if (expiryMonthError === false) {
+  
+    if (!arePositiveNumbers(expiryMonthElem.value.trim())) {
+     
+        addTextError(".month-error","Wrong format,numbers only","insert");
+        handlerClassChange(".month-error","month-error-active","add");
+        expiryMonthError = true
+    }else{
+        expiryMonthError = false;
+        handlerClassChange(".month-error","month-error-active","remove");
+        addTextError(".month-error","Can't be blank","remove")
+    }
 }
 
 
 if( expiryYearElem.value.trim().length  === 0 ){
     addTextError(".year-error","Can't be blank","insert")
     handlerClassChange(".year-error","year-error-active","add");
+    expiryYearError = true;
 }else{
     handlerClassChange(".year-error","year-error-active","remove");
     addTextError(".year-error","Can't be blank","remove")
- 
+    expiryYearError = false;
 }
 
- expiryYearElem.value.trim().length  === 0 ? addTextError(".year-error","Can't be blank") : null
-  
 
+if (expiryYearError === false) {
+   
+    if (!arePositiveNumbers(expiryYearElem.value.trim())) {
+     
+        addTextError(".year-error","Wrong format,numbers only","insert");
+        handlerClassChange(".year-error","year-error-active","add");
+        expiryYearError = true
+    }else{
+        expiryYearError = false;
+        handlerClassChange(".year-error","year-error-active","remove");
+        addTextError(".year-error","Can't be blank","remove")
+    }
+}
+
+
+if( cvcInputElem.value.trim().length  === 0 ){
+    addTextError(".cvc-error","Can't be blank","insert")
+    handlerClassChange(".cvc-error","cvc-error-active","add");
+    expiryCvcError = true;
+}else{
+    handlerClassChange(".cvc-error","year-error-active","remove");
+    addTextError(".cvc-error","Can't be blank","remove")
+    expiryCvcError = false;
+}
+
+
+if (expiryCvcError === false) {
+  
+    if (!arePositiveNumbers(cvcInputElem.value.trim())) {
+        addTextError(".cvc-error","Wrong format,numbers only","insert");
+        handlerClassChange(".cvc-error","year-error-active","add");
+        expiryYearError = true
+    }else{
+        expiryYearError = false;
+        handlerClassChange(".cvc-error","year-error-active","remove");
+        addTextError(".cvc-error","Can't be blank","remove")
+    }
+}
+
+
+    console.log(nameInputError,numberInputError,expiryMonthError,expiryYearError,expiryCvcError)
+
+
+    if(nameInputError === false && numberInputError ===  false  && expiryMonthError === false && expiryYearError === false && expiryCvcError === false){
+        console.log("first")
+        const formEl = document.querySelector(".form");
+        formEl.style.display = "none";
+        const modalSuccess =  document.querySelector(".modal-success");
+        modalSuccess.style.display = "block";
+        const btnSuccess = document.querySelector(".btn-success");
+        btnSuccess.addEventListener("click",()=>{
+            nameInputElem.value =""
+             numberInputElem.value = ""
+             expiryMonthElem.value = ""
+             expiryYearElem.value = ""
+             cvcInputElem.value = ""
+            window.location.reload();
+        })
+    }
 
 }
 
