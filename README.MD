@@ -12,7 +12,7 @@ For live preview click [link](https://extraordinary-gingersnap-6484df.netlify.ap
 
 
 ## General info
-This project a front mentor challenge ( [Front Mentor link ](https://www.frontendmentor.io/home))
+This project is a front mentor challenge ( [Front Mentor link ](https://www.frontendmentor.io/home))
 
 ## Technologies
 
