@@ -56,7 +56,7 @@ a {
   width: 480px;
   height: 100%;
   position: relative;
-  background-image: url("../img/design-images/bg-main-desktop.png");
+  background-image: url("../img/bg-main-desktop.png");
   background-size: cover;
 }
 
@@ -71,7 +71,7 @@ a {
 .card-front-site {
   top: 186px;
   left: 163px;
-  background-image: url("../img/design-images/bg-card-front.png");
+  background-image: url("../img/bg-card-front.png");
   color: var(--clr-white);
   position: relative;
   z-index: 2;
@@ -84,7 +84,7 @@ a {
   left: 32px;
   width:86px;
   height: 100%;
-  background-image: url("../img/design-images/card-logo.svg");
+  background-image: url("../img/card-logo.svg");
   background-repeat: no-repeat;
 }
 
@@ -116,7 +116,7 @@ a {
 .card-back-site {
   top: 469px;
   left: 256px;
-  background-image: url("../img/design-images/bg-card-back.png");
+  background-image: url("../img/bg-card-back.png");
   z-index: 2;
 }
 
@@ -280,7 +280,7 @@ small{
   font-family: var(--ff-main);
 }
 .icon{
-  background-image: url("../img/design-images/icon-complete.svg");
+  background-image: url("../img/icon-complete.svg");
     display: inline-block;
     width: 80px;
     height: 82px;
@@ -290,8 +290,6 @@ small{
 
 .modal-success h2{
   font-size:31px;
-
-
   text-transform:uppercase;
   letter-spacing:2px;
   line-height: 25px;
@@ -338,7 +336,8 @@ small{
 
   
   .cards-container{
-    /* display: block; */
+   width: 375px;
+
     height: 240px;
     position: relative;
  
@@ -400,7 +399,56 @@ small{
     right: 35px;
   }
 
-  .btn-cta{
+  .form{
+   width: 328px;
+    height: 226px;
+    margin: 93px  24px 0 24px;
+    font-family: var(--ff-main);
+  }
+
+  label{
+    font-size:12px;
+    letter-spacing: 2px;
+    line-height:10px;
+  }
+
+
+  .input-month ,.input-year {
+    width: 71px;
+    height: 45px;
+  }
+
+
+  small{
+  
+    font-size:10px;
+   
+    margin-top: 2px;
+  }
+
+  .month-error{
+ 
+    width: 75px;
+   
   
   }
+  .year-error{
+ 
+    width: 75px;
+  }
+
+  .cvc-error{
+    margin-top:2px;
+  }
+
+  .modal-success{
+    display: none;
+    width: 329px;
+    height: 291px;
+    text-align: center;
+    margin: 93px 23px 0 23px;
+   
+  }
+
+ 
 }
